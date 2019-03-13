@@ -1,0 +1,23 @@
+<!--_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- HEADER TEMPLATE -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-->
+
+<!-- Buttons: -for collapse menu -for contact withcyour evaluator -->
+<div id="headerContainer" class="headerContainer noCollapse">
+	<span class="collapsibleMenuIconBurger" ng-if="!isMenuOpen" ng-click="menuVisibility(true)">&#9776;</span>
+	<span class="collapsibleMenuIconCross" ng-if="isMenuOpen" ng-click="menuVisibility(false)">&times;</span>
+	<span class="contactWithEvaluator">
+		<button type="button" class="btn btn-primary" ng-click="hideShowContactEvaluatorInfo('show')">Contact with evaluator</button>
+	</span>
+</div>	
+
+<!-- Contact with your evaluator div and content -->
+<div id="evaluatorInfo" class="cover contactEvaluator hide fadeIn" ng-if="true">
+	<span class="hideContactEvaluatorCross" ng-click="hideShowContactEvaluatorInfo('hide')">×</span>
+	<p class="pContactEvaluator">		
+		If you have any doubts about the procedure of the technical test you can contact your evaluator through the email that we enclose here:
+	</p>	
+	<div class="imgFotoPosition"><img class="imageEvaluator" src="resources/images/fotoSergio.PNG" alt="Evaluator photo"></div>
+	<div class="evaluatorMail">sergio.cernuda@ricoh.es</div>
+</div>
+
+
+

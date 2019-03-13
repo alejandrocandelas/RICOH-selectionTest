@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="test_senior_angularjs">
+    <head>
+        <!-- Metas -->
+        <meta charset="utf-8">
+        <meta name="author" content="Sergio Cernuda sergio.cernuda@ricoh.es">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Test to be done for junior developers of angularjs to assess their technical knowledge.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Cache-Control" content="max-age=0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Tittle -->
+        <title>Test Senior AngularJS Developer </title>
+
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        <link rel="shortcut icon" href="resources/icons/favicon.ico">
+
+        <!--Libraries css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Css -->
+        <link rel="stylesheet" href="resources/styles/adminTypeTemplateCss/main.css">
+        <link rel="stylesheet" href="resources/styles/adminTypeTemplateCss/sideBar.css">
+        <link rel="stylesheet" href="resources/styles/adminTypeTemplateCss/header.css">
+        <link rel="stylesheet" href="resources/styles/adminTypeTemplateCss/content.css">
+        <link rel="stylesheet" href="resources/styles/adminTypeTemplateCss/footer.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+        
+    </head>
+
+    <body ng-controller="AppController">
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Header -->
+            <div ui-view="header" class="header {{stateName}}"></div>
+            <!-- Menu -->
+            <div ui-view="menu" class="menu {{stateName}}"></div>
+            <!-- Main view  -->
+            <div ui-view="content" class="content {{stateName}}"></div>
+            <!-- Footer -->
+            <div ui-view="footer" class="footer {{stateName}}"></div>
+        </div>
+
+    </body>
+
+        <!-- LIBRARIES -->      
+        <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+
+        <!-- CONFIG -->
+        <script type="text/javascript" src="js/modules/appModules.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/config/appConfig.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/config/homeConfig.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/config/testConfig.js" charset="UTF-8"></script>
+
+        <!-- VIEWS CONTROLLERS -->
+        <script type="text/javascript" src="js/controllers/appController.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/controllers/templateControllers/menuController.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/controllers/templateControllers/footerController.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/controllers/templateControllers/headerController.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/controllers/viewControllers/homeController.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="js/controllers/viewControllers/testController.js" charset="UTF-8"></script>
+
+</html>

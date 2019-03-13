@@ -1,0 +1,100 @@
+/********************************************************************** HEADER ******************************************************************************/
+
+.header{
+    width: -webkit-fill-available;
+    height: 46px;
+    background: #011E4A;
+    position: relative;
+    z-index: 10;
+}
+
+.headerContainer{
+	transition: 0.5s;
+	color: white;
+ 	height: -webkit-fill-available;
+}
+
+.headerContainer.collapse{
+	margin-left: 30px;
+	display: block;
+}
+
+.headerContainer.noCollapse{
+	margin-left: 170px;
+	display: block;
+}
+
+.collapsibleMenuIconBurger{
+	font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 8px;
+}
+
+.collapsibleMenuIconCross {
+	font-size: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.contactWithEvaluator{
+    float: right;
+    margin-top: 6px;
+    margin-right: 52px;
+}
+
+.cover.contactEvaluator {
+    position: fixed;
+    right: 0;
+    top: 46px;
+    background: -moz-linear-gradient(top, rgba(1,30,74,1) 0%, rgba(1,30,74,0.91) 14%, rgba(1,30,74,0.7) 45%, rgba(1,30,74,0.33) 100%);
+    background: -webkit-linear-gradient(top, rgba(1,30,74,1) 0%,rgba(1,30,74,0.91) 14%,rgba(1,30,74,0.7) 45%,rgba(1,30,74,0.33) 100%);
+    background: linear-gradient(to bottom, rgba(1,30,74,1) 0%,rgba(1,30,74,0.91) 14%,rgba(1,30,74,0.7) 45%,rgba(1,30,74,0.33) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011e4a', endColorstr='#54011e4a',GradientType=0 );
+    z-index: 10;
+    width: 300px;
+    height: 300px;
+    padding: 2em;
+    border-left: solid 1px white;
+    border-bottom: solid 1px white;
+    animation: fadein 1s;
+}
+
+.pContactEvaluator{
+    color: white;
+    text-align: center;
+}
+
+.imgFotoPosition{
+    text-align: center;
+}
+
+.evaluatorMail{
+    color: white;
+    font-size: 20px;
+}
+
+.imageEvaluator{
+    width: 75px;
+    padding-bottom: 13px;
+    border-radius: 17%;
+}
+
+.hideContactEvaluatorCross{
+    position: absolute;
+    left: 5px;
+    top: -14px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+

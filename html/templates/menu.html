@@ -1,0 +1,32 @@
+<!--_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- SIDE MENU TEMPLATE -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-->
+
+<div id="mySidenav" class="sidenav noCollapse">
+	
+	<!-- Top Ricoh logo-->
+	<div class="imgLogoPosition" >
+		<a target="_blank" href="https://www.ricoh.es/index.html">
+			<img ng-if="openedMenu() =='open'" src="resources/images/ricoh-hd_logo.png" class="fullLogo" alt="Full ricoh logo">
+			<img ng-if="openedMenu() == 'close'" src="resources/images/Ricoh-logo-min.png" class="minLogo" alt="Min rico logo">
+		</a>
+	</div>
+
+	<!-- Menu list Container-->
+	<div id="menuItems" class="menuItems">
+
+		<!-- Menu when isn´t collapse literal text-->
+		<ul class="menuOpenUl" ng-if="openedMenu() =='open'">
+		  <li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''">Welcome</li>
+		  <li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''">Test/Info</li>
+		</ul>
+
+		<!-- Menu when is collapse icons-->
+		<ul class="menuCloseUl" ng-if="openedMenu() =='close'">
+		  <li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Welcome">
+		  	<i class="fas fa-home"></i>
+		  </li>
+		  <li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Your Test info">
+		  	<i class="fas fa-trophy"></i>
+		  </li>
+		</ul>
+	</div>
+</div>
