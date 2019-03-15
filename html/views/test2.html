@@ -1,36 +1,75 @@
 <div class="contentContainer" ng-class="openedMenu() =='open' ? 'noCollapse' : 'collapse'"
-    ng-controller="test1Controller">
-    <div class="containerTest center">
+	ng-controller="test1Controller">
+	<div class="containerTest center">
 
-        <h4 class="contentMainTittle">Test 2.a - Make a table with desktop computers.</h4>
+		<h4 class="contentMainTittle">Test 2.a - Make a table with desktop computers.</h4>
 
-        <table class="test2-table">
-            <thead>
-                <tr>
-                    <th>Brand</th>
-                    <th>Model</th>
-                    <th>Price</th>
-                    <th>CPU</th>
-                    <th>RAM</th>
-                    <th>Type</th>
-                    <th>Shape</th>
-                    <th>Image</th>
-                </tr>
-            </thead>
+		<table class="test2-table">
+			<thead>
+				<tr>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Price</th>
+					<th>CPU</th>
+					<th>RAM</th>
+					<th>Type</th>
+					<th>Shape</th>
+					<th>Image</th>
+				</tr>
+			</thead>
 
-            <tbody>
-                <tr ng-repeat="item in computers">
-                    <td>{{item.brand}}</td>
-                    <td>{{item.model}}</td>
-                    <td>{{item.price}}</td>
-                    <td>{{item.cpu}}</td>
-                    <td>{{item.ram}}</td>
-                    <td>{{item.type}}</td>
-                    <td>{{item.shape}}</td>
-                    <td><img src="{{item.urlImagePath}}/{{item.model}}.jpg" alt="{{item.model}}" width="100"></td>
-                </tr>
-            </tbody>
-        </table>
+			<tbody>
+				<!-- By the ng-if directive, the table shows the right rows for current page. -->
+				<tr ng-repeat="item in desktopComputers"
+					ng-if="$index >= $parent.dtConfig.first && $index < ($parent.dtConfig.first + $parent.dtConfig.rowsPerPage)">
+					<td>{{item.brand}}</td>
+					<td>{{item.model}}</td>
+					<td>{{item.price}}</td>
+					<td>{{item.cpu}}</td>
+					<td>{{item.ram}}</td>
+					<td>{{item.type}}</td>
+					<td>{{item.shape}}</td>
+					<td><img src="{{item.urlImagePath}}/{{item.model}}.jpg" alt="{{item.model}}" width="100"></td>
+				</tr>
+			</tbody>
+		</table>
 
-    </div>
+		<nav aria-label="Page navigation" class="page-navigation">
+
+			<span>Showing from {{dtConfig.first + 1}} to
+				{{dtConfig.first + dtConfig.rowsPerPage > desktopComputers.length ? desktopComputers.length : dtConfig.first + dtConfig.rowsPerPage}}
+				of {{desktopComputers.length}}</span>
+
+			<div class="pagination-block">
+
+				<ul class="pagination">
+					<li>
+						<a class="pointer" ng-click="goPage('-')" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li ng-repeat="page in getPages()"><a class="pointer" ng-click="goPage(page)"
+							ng-class="page == dtConfig.first / dtConfig.rowsPerPage + 1 ? 'active-page' : ''">{{page}}</a>
+					</li>
+					<li>
+						<a class="pointer" ng-click="goPage('+')" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="row pagination-select">
+					<label class="col-sm-6">Rows to show</label>
+					<div class="col-sm-6">
+						<select class="form-control" ng-model="dtConfig.rowsPerPage"
+							ng-options="option for option in dtConfig.rowsPerPageOptions" ng-change="goPage(1)">
+						</select>
+					</div>
+				</div>
+
+			</div>
+
+		</nav>
+
+	</div>
 </div>

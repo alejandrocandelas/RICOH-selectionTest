@@ -53,9 +53,13 @@ app.controller('AppController', ['$rootScope', '$scope', '$state',
 	    }   
 
 
-	     $.getJSON('resources/data/data.json', function(data) {         
+	    $.getJSON('resources/data/data.json', function(data) {         
 		    $rootScope.computers = data;
-		});
+			});
+
+			$.getJSON('resources/data/dtConfig.json', function(data) {         
+		    $rootScope.dtConfig = data;
+			});
 
     }]);
 
