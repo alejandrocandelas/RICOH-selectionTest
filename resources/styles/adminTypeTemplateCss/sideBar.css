@@ -80,7 +80,8 @@
 }
 
 .menuItems .menuCloseUl li{
-  padding-left: 11px;  
+  /* padding-left: 11px;   */
+  text-align: center;
 }
 
 .menuItems  li:hover{
@@ -112,6 +113,9 @@
     padding-left: 38px;
 }
 
-
+.fa-stack-lg {
+  font-size: 1.3em;
+  font-style: normal;
+}
 
 

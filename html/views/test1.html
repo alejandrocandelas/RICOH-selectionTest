@@ -1,0 +1,113 @@
+<!--_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- TEST 1 TEMPLATE -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-->
+
+<div class="contentContainer" ng-class="openedMenu() =='open' ? 'noCollapse' : 'collapse'"
+	ng-controller="test1Controller">
+	<div class="containerTest center">
+
+		<h4 class="contentMainTittle">Test 1 - Make a Form</h4>
+
+		<p class="center">In this form, you can add new computers. <i>Fields <strong class="text-danger">*</strong> are
+				required.</i></p>
+
+		<form novalidate class="col-md-10 col-md-offset-1" name="computerForm">
+			<div class="row">
+				<div class="form-group">
+					<label class="col-sm-2" for="brand">Brand<strong class="text-danger">*</strong></label>
+					<div class="col-sm-4">
+						<input name="brand" type="text" class="form-control" ng-model="computer.brand"
+							placeholder="Brand" id="brand" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="model">Model</label>
+					<div class="col-sm-4">
+						<input name="model" type="text" class="form-control" ng-model="computer.model"
+							placeholder="Model" id="model">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="price">Price</label>
+					<div class="col-sm-4">
+						<div class="input-group">
+							<input name="price" type="number" class="form-control" ng-model="computer.price"
+								placeholder="Price" aria-describedby="price-addon" id="price">
+							<span class="input-group-addon" id="price-addon">€</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="cpu">CPU</label>
+					<div class="col-sm-4">
+						<input name="cpu" type="text" class="form-control" ng-model="computer.cpu" placeholder="CPU"
+							id="cpu">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="ram">RAM</label>
+					<div class="col-sm-4">
+						<div class="input-group">
+							<input name="ram" type="number" class="form-control" ng-model="computer.ram"
+								placeholder="RAM" aria-describedby="ram-addon" id="ram">
+							<span class="input-group-addon" id="ram-addon">GB</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="type">Type</label>
+					<div class="col-sm-4">
+						<select name="type" class="form-control" id="type" ng-model="computer.type">
+							<option value="multimedia">Multimedia</option>
+							<option value="gaming">Gaming</option>
+							<option value="workstation">Workstation</option>
+							<option value="all in one">All in one</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="shape">Shape<strong class="text-danger">*</strong></label>
+					<div class="col-sm-4">
+						<select name="shape" class="form-control" id="shape" ng-model="computer.shape" required>
+							<option value="desktob">Desktob</option>
+							<option value="laptop">Laptop</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2" for="urlImagePath">Image path</label>
+					<div class="col-sm-4">
+						<!-- <input name="urlImagePath" type="text" class="form-control" ng-model="computer.urlImagePath"
+								placeholder="Image path" id="urlImagePath"> -->
+						<input type="file" name="urlImagePath" class="form-control" fileread="$scope.image"
+							id="urlImagePath">
+					</div>
+				</div>
+
+				<div class="col-sm-12 center">
+					<button class="btn btn-primary" type="submit" ng-click="update(computer)">Save</button>
+				</div>
+			</div>
+		</form>
+
+		<div ng-if="submitted == true" class="col-sm-10 col-md-offset-1 text-left">
+			<p>New computer:</p>
+			<ul>
+				<li>Brand: {{computer.brand}}</li>
+				<li>Model: {{computer.model}}</li>
+				<li>Price: {{computer.price}}</li>
+				<li>Cpu: {{computer.cpu}}</li>
+				<li>Ram: {{computer.ram}}</li>
+				<li>Type: {{computer.type}}</li>
+				<li>Shape: {{computer.shape}}</li>
+				<li>Image: {{computer.urlImagePath}}</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
