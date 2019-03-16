@@ -24,11 +24,6 @@ body, html {
     overflow: hidden;
 }
 
-.container .row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
 iframe {
     width: -webkit-fill-available;
     height: -webkit-fill-available;

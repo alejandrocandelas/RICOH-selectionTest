@@ -1,0 +1,44 @@
+<div class="contentContainer test3" ng-class="openedMenu() =='open' ? 'noCollapse' : 'collapse'"
+    ng-controller="test1Controller">
+    <div class="containerTest">
+        <!-- TEST 2.B -->
+        <h4 class="contentMainTittle center">Test 3 - Make a summary panel.</h4>
+
+        <div class="row">
+
+            <div class="col-md-3 col-lg-2">
+
+                <div class="left-panel">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-describedby="search" ng-model="search" ng-change="doSearch(search)">
+                        <span class="input-group-addon" id="search"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-9 col-lg-10">
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="item in computers">
+                        <div class="test-panel">
+                            <img src="{{item.urlImagePath}}/{{item.model}}.jpg" alt="{{item.model}}"
+                                class="test-panel-img">
+                            <div class="test-panel-body">
+                                <div class="test-panel-title">{{item.brand}} {{item.model}}</div>
+                                <ul class="test-panel-list">
+                                    <li>{{item.cpu}}</li>
+                                    <li>{{item.ram}}GB</li>
+                                    <li>{{item.type}}</li>
+                                    <li class="bold">{{item.price}}€</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

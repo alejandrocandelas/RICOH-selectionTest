@@ -1,0 +1,43 @@
+.test3 {
+    background-color: #eee;
+}
+
+.left-panel, .test-panel {
+    background: #fff;
+    box-shadow: 0 2px 3px 0px #bbb;
+    margin-bottom: 30px;
+}
+
+.left-panel {
+    padding: 1rem;
+}
+
+.test-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.test-panel img.test-panel-img {
+    width: 100%;
+
+}
+
+.test-panel .test-panel-body {
+    width: 100%;
+    padding: 1rem;
+}
+
+.test-panel .test-panel-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.test-panel .test-panel-list {
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.bold {
+    font-weight: bold;
+}
