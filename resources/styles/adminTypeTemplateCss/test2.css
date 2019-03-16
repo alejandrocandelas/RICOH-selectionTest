@@ -1,59 +1,215 @@
 .contentContainer {
-    margin-bottom: 5rem;
+    margin-left: 170px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TEST 2.A */
+
+.contentContainer {
+	margin-bottom: 5rem;
 }
 
 .test2-table {
-    width: 100%;
-    border: 1px solid black;
-    border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse;
 }
 
 .test2-table th, .test2-table td {
-    border: 1px solid black;
-    text-align: center;
-    padding: .5rem;
+	text-align: center;
+	padding: .5rem;
 }
 
+/* odd rows background */
 tr:nth-child(odd) {
-    background: #eee
+	background: #eee
 }
 
+/* header cells background */
 thead tr {
-    background: #9e9e9e!important;
-    color: white;
+	background: #6d85a8!important;
+	color: white;
 }
 
+/* pagination style */
 .pointer {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .active-page {
-    background: #eee!important;
-    font-weight: bold;
+	background: #eee!important;
+	font-weight: bold;
 }
 
 nav.page-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
 .pagination {
-    margin: 0;
+	margin: 0;
 }
 
 .pagination-block {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .pagination-select {
-    margin-left: 4rem;
-    margin-right: -15px;
-    width: 250px;
+	margin-left: 4rem;
+	margin-right: -15px;
+	width: 250px;
 }
 
 .pagination-select select {
-    margin-bottom: 0!important;
+	margin-bottom: 0!important;
+}
+
+/* media query, responsive styles */
+@media(max-width: 900px) {
+	.pagination-block, nav.page-navigation {
+		flex-direction: column;
+	}
+
+	.pagination-block, .pagination-select {
+		margin-top: 1rem;
+	}
+
+	.table-scroll {
+		overflow-x: scroll;
+	}
+}
+
+
+/* TEST 2.B */
+
+/* Slideshow container */
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+  
+/* Hide the images by default */
+.mySlides {
+	display: none;
+}
+  
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	text-shadow: 0px 0px 3px black;
+}
+  
+/* Position the "next button" to the right */
+.next {
+	right: 0!important;
+	border-radius: 3px 0 0 3px;
+}
+  
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+	color: #ffffff;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: left;
+	background: #0000006e;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text .model {
+	font-size: 2rem;
+}
+
+.text .price {
+    font-size: 3rem;
+    flex: 0 0 20%;
+}
+
+.text .model, .text .price {
+	font-weight: bold;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active.dot, .dot:hover {
+	background-color: #717171;
+}
+
+.dot-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dot-container .fas {
+	color: #bbb;
+	margin-right: .3rem;
+}
+
+.dot-container .fas:hover {
+	color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 0.6s;
+	animation-name: fade;
+	animation-duration: 0.6s;
+	opacity: 1;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: 0.4} 
+	to {opacity: 1}
+}
+  
+@keyframes fade {
+	from {opacity: 0.4} 
+	to {opacity: 1}
 }

@@ -1,75 +1,127 @@
 <div class="contentContainer" ng-class="openedMenu() =='open' ? 'noCollapse' : 'collapse'"
 	ng-controller="test1Controller">
 	<div class="containerTest center">
-
+		<!-- TEST 2.B -->
 		<h4 class="contentMainTittle">Test 2.a - Make a table with desktop computers.</h4>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 table-scroll">
+				<table class="test2-table">
+					<thead>
+						<tr>
+							<th>Brand</th>
+							<th>Model</th>
+							<th>CPU</th>
+							<th>RAM</th>
+							<th>Type</th>
+							<th>Shape</th>
+							<th>Price</th>
+							<th>Image</th>
+						</tr>
+					</thead>
 
-		<table class="test2-table">
-			<thead>
-				<tr>
-					<th>Brand</th>
-					<th>Model</th>
-					<th>Price</th>
-					<th>CPU</th>
-					<th>RAM</th>
-					<th>Type</th>
-					<th>Shape</th>
-					<th>Image</th>
-				</tr>
-			</thead>
+					<tbody>
+						<!-- By the ng-if directive, the table shows the right rows for current page. -->
+						<tr ng-repeat="item in desktopComputers"
+							ng-if="$index >= $parent.dtConfig.first && $index < ($parent.dtConfig.first + $parent.dtConfig.rowsPerPage)">
+							<td>{{item.brand}}</td>
+							<td>{{item.model}}</td>
+							<td>{{item.cpu}}</td>
+							<td>{{item.ram}}GB</td>
+							<td>{{item.type}}</td>
+							<td>{{item.shape}}</td>
+							<td>{{item.price}}€</td>
+							<td><img src="{{item.urlImagePath}}/{{item.model}}.jpg" alt="{{item.model}}" width="100">
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<tbody>
-				<!-- By the ng-if directive, the table shows the right rows for current page. -->
-				<tr ng-repeat="item in desktopComputers"
-					ng-if="$index >= $parent.dtConfig.first && $index < ($parent.dtConfig.first + $parent.dtConfig.rowsPerPage)">
-					<td>{{item.brand}}</td>
-					<td>{{item.model}}</td>
-					<td>{{item.price}}</td>
-					<td>{{item.cpu}}</td>
-					<td>{{item.ram}}</td>
-					<td>{{item.type}}</td>
-					<td>{{item.shape}}</td>
-					<td><img src="{{item.urlImagePath}}/{{item.model}}.jpg" alt="{{item.model}}" width="100"></td>
-				</tr>
-			</tbody>
-		</table>
+			</div>
+		</div>
 
-		<nav aria-label="Page navigation" class="page-navigation">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
 
-			<span>Showing from {{dtConfig.first + 1}} to
-				{{dtConfig.first + dtConfig.rowsPerPage > desktopComputers.length ? desktopComputers.length : dtConfig.first + dtConfig.rowsPerPage}}
-				of {{desktopComputers.length}}</span>
+				<nav aria-label="Page navigation" class="page-navigation">
 
-			<div class="pagination-block">
+					<span>Showing from {{dtConfig.first + 1}} to
+						{{dtConfig.first + dtConfig.rowsPerPage > desktopComputers.length ? desktopComputers.length : dtConfig.first + dtConfig.rowsPerPage}}
+						of {{desktopComputers.length}}</span>
 
-				<ul class="pagination">
-					<li>
-						<a class="pointer" ng-click="goPage('-')" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>
-					<li ng-repeat="page in getPages()"><a class="pointer" ng-click="goPage(page)"
-							ng-class="page == dtConfig.first / dtConfig.rowsPerPage + 1 ? 'active-page' : ''">{{page}}</a>
-					</li>
-					<li>
-						<a class="pointer" ng-click="goPage('+')" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-				</ul>
+					<div class="pagination-block">
 
-				<div class="row pagination-select">
-					<label class="col-sm-6">Rows to show</label>
-					<div class="col-sm-6">
-						<select class="form-control" ng-model="dtConfig.rowsPerPage"
-							ng-options="option for option in dtConfig.rowsPerPageOptions" ng-change="goPage(1)">
-						</select>
+						<ul class="pagination">
+							<li>
+								<a class="pointer" ng-click="goPage('-')" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<li ng-repeat="page in getPages()"><a class="pointer" ng-click="goPage(page)"
+									ng-class="page == dtConfig.first / dtConfig.rowsPerPage + 1 ? 'active-page' : ''">{{page}}</a>
+							</li>
+							<li>
+								<a class="pointer" ng-click="goPage('+')" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</ul>
+
+						<div class="row pagination-select">
+							<label class="col-sm-6">Rows to show</label>
+							<div class="col-sm-6">
+								<select class="form-control" ng-model="dtConfig.rowsPerPage"
+									ng-options="option for option in dtConfig.rowsPerPageOptions" ng-change="goPage(1)">
+								</select>
+							</div>
+						</div>
+
 					</div>
+
+				</nav>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="containerTest">
+
+		<!-- TEST 2.B -->
+		<h4 class="contentMainTittle center">Test 2.b - Make a carousel with laptop computers.</h4>
+		<div class="row" ng-if="laptopComputers">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- Slideshow container -->
+				<div class="slideshow-container">
+
+					<!-- Full-width images with number and caption text -->
+					<div class="mySlides fade" ng-repeat="item in laptopComputers">
+						<img src="{{item.urlImagePath}}/{{item.model}}.jpg" style="width:100%">
+						<div class="text">
+							<div>
+								<div class="model">{{item.brand}} {{item.model}}</div>
+								<div>{{item.cpu}} processor</div>
+								<div>{{item.ram}}GB RAM</div>
+								<div>{{item.type}}</div>
+							</div>
+							<div class="price">{{item.price}}€</div>
+						</div>
+					</div>
+				
+					<!-- Next and previous buttons -->
+					<a class="prev" ng-click="plusSlides(-1)">&#10094;</a>
+					<a class="next" ng-click="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+				
+				<!-- The dots/circles -->
+				<div class="dot-container">
+					<span class="fas fa-play pointer" ng-if="!interval" ng-click="start()"></span>
+					<span class="fas fa-pause pointer" ng-if="interval" ng-click="stop()"></span>
+					<span class="dot" ng-repeat="item in laptopComputers" ng-click="currentSlide($index + 1)"></span>
 				</div>
 
 			</div>
-
-		</nav>
+		</div>
 
 	</div>
 </div>
