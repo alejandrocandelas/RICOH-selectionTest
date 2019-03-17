@@ -9,8 +9,8 @@
  * @date 11/12/2018
  * @description Header controller
  */
-app.controller('headerController', ['$rootScope', '$scope',
-    function ($rootScope, $scope) {
+app.controller('headerController', ['$rootScope', '$scope', '$translate',
+    function ($rootScope, $scope, $translate) {
 
 	    /**
 		 * @autor Sergio Cernuda
@@ -27,6 +27,29 @@ app.controller('headerController', ['$rootScope', '$scope',
 				$("#evaluatorInfo").removeClass( "show" );
 				$("#evaluatorInfo").addClass( "hide" );
 	    	}
-	    } 
+		}
+
+		/**
+		 * @autor Alejandro Candelas
+		 * @mail sergio.cernuda@ricoh.es
+		 * @date 17/12/2018
+		 * @description Sets the current language in translate provider and local storage.
+		 * @params isOpen:boolean
+		 */
+		$scope.setLang = function(lang) {
+			$translate.use(lang);
+			localStorage.setItem('lang', lang);
+		}
+
+		$scope.getCurrentLang = function() {
+			if ($translate.isReady()) {
+				let lang = $translate.use();
+
+				switch(lang) {
+					case 'es': return $translate.instant('SPANISH');
+					case 'en': return $translate.instant('ENGLISH');
+				}
+			}
+		}
     }
 ]);
