@@ -33,12 +33,11 @@ app.controller('headerController', ['$rootScope', '$scope', '$translate',
 		 * @autor Alejandro Candelas
 		 * @mail sergio.cernuda@ricoh.es
 		 * @date 17/12/2018
-		 * @description Sets the current language in translate provider and local storage.
+		 * @description Sets the current language.
 		 * @params isOpen:boolean
 		 */
 		$scope.setLang = function(lang) {
 			$translate.use(lang);
-			localStorage.setItem('lang', lang);
 		}
 
 		$scope.getCurrentLang = function() {

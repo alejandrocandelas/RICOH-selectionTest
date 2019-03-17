@@ -22,15 +22,13 @@ app.config(function () {
  */
 app.config(['$translateProvider', function ($translateProvider) {
     let lang = 'en';
-    if (localStorage.getItem('lang')) {
-        lang = localStorage.getItem('lang');
-    }
     $translateProvider.useStaticFilesLoader({
         prefix: 'resources/i18n/locale-',
         suffix: '.json'
     })
     .preferredLanguage(lang)
-    .useSanitizeValueStrategy('sceParameters');
+    .useSanitizeValueStrategy('sceParameters')
+    .useLocalStorage();
 }]);
 
 

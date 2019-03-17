@@ -11,6 +11,7 @@
  */
 var app = angular.module('test_senior_angularjs', [
     'ui.router',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ngCookies'
 ]);
 
