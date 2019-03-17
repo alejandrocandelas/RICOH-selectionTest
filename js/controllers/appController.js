@@ -9,8 +9,8 @@
  * @date 11/12/2018
  * @description AppController main controller for the application.
  */
-app.controller('AppController', ['$rootScope', '$scope', '$state',
-    function ($rootScope, $scope, $state) {
+app.controller('AppController', ['$rootScope', '$scope', '$state', '$translate',
+    function ($rootScope, $scope, $state, $translate) {
 
 	    $rootScope.isMenuOpen = true;
 
@@ -57,9 +57,22 @@ app.controller('AppController', ['$rootScope', '$scope', '$state',
 		    $rootScope.computers = data;
 		});
 
+		// Gets table config
 		$.getJSON('resources/data/dtConfig.json', function(data) {
 		    $rootScope.dtConfig = data;
 		});
+
+		/**
+		 * @autor Alejandro Candelas
+		 * @mail sergio.cernuda@ricoh.es
+		 * @date 17/12/2018
+		 * @description Sets the current language in translate provider and local storage.
+		 * @params isOpen:boolean
+		 */
+		$rootScope.setLang = function(lang) {
+			$translate.use(lang);
+			localStorage.setItem('lang', lang);
+		}
 
     }]);
 

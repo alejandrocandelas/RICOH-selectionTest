@@ -5,15 +5,14 @@
 
 		<!-- Angular test Logo-Tittle-Paragraph -->
 		<img class="angularLogo" src="resources/images/AngularJS_logo.svg.png"></img>
-		<h4 class="contentMainTittle">Developer advanced Test</h4>
-		<p class="center">This is your access technical test to be an angular js developer for ricoh.
-		In the following tabs we indicate the procedures to do and what we are looking for as a developer in angularjs.</p>
+		<h4 class="contentMainTittle">{{"TEST_TITLE" | translate}}</h4>
+		<p class="center">{{"TEST_SUBTITLE" | translate}}</p>
 
 		<!-- Tabs -->
 		<ul class="nav nav-tabs col-md-10 col-md-offset-1">
-			<li class="active"><a data-toggle="tab" href="#Introduction">Introduction</a></li>
-		    <li><a data-toggle="tab" href="#test">Tests</a></li>
-		    <li><a data-toggle="tab" href="#aditionalInfo">Aditional Info</a></li>
+			<li class="active"><a data-toggle="tab" href="#Introduction">{{"INTRODUCTION" | translate}}</a></li>
+		    <li><a data-toggle="tab" href="#test">{{"TESTS" | translate}}</a></li>
+		    <li><a data-toggle="tab" href="#aditionalInfo">{{"ADITIONAL_INFO" | translate}}</a></li>
 		</ul>
 
 		<!-- Tab Content -->
@@ -23,119 +22,45 @@
 		  		<!-- Introduction -->
 			    <div id="Introduction" class="tab-pane fade in active">
 			    	<div class="col-sm-8 col-sm-offset-2">
-				      	<h3 class="center">Introduction</h3>
-				       	<p>	
-							You are about to start performing the technical test that Ricoh proposes for the recruitment of Angularjs developers.
-						</p>
-						<p>					
-							This test consists of 4 independent tests consisting of the development of a table, the development of a form, the development of a summary panel and implement multilanguage.
-							These four tests are thoroughly explained in the following tabs.
-						</p>
-						<p>
-						The quality and result of this test will have an important weight of decision that the group of evaluators take when evaluating your candidacy to be part of our team.
-						</p>
-						<p>
-						We are aware that the test can be difficult to face depending on the personal situation of the evaluated, since it is extensive and will take much of your free time. But the compensation will be directly proportional to its result, so we ask for an extra effort to the evaluated that will be rewarded.
-						</p>
-						<p>
-							Finally, in case of any doubt in the realization of this test, get in touch with our team and we will solve it as quickly as possible.
-						</p>
-						<p>Sincerely, Sergio Cernuda Fdez angularJs developer on Ricoh.</p>
-					</div>
+								<h3 class="center">{{"INTRODUCTION" | translate}}</h3>
+								<div translate="INTRODUCTION_TEXT"></div>
+						</div>
 			    </div>
 
 			    <!-- Tests Info -->
 			    <div id="test" class="tab-pane fade col-sm-12">
 			    	<div class="col-sm-3">
-				      <h2 class="center">Test 1</h3>
-				        <h3>Make a Form</h3>
-				      	<p>		      
-							Make a form that simulates inserting an object in the json hosted in "/resources/data/data.json".
-						</p>
-						<p>	
-							Create all the necessary fields in the form for the simulation and treat them correctly from the controller.
-						</p>
-						<p>				
-							After this you have two options
-						</p>
-						<ul>
-							<li>Show the object on the same form screen</li>
-							<li>Show the object by console</li>
-						</ul>
-						<p>
-							The form will be inserted in a new tab that you will have to create in the side menu with the correct configuration and using the ui-router library for navigation.
-						</p>
+				      <h2 class="center">{{"TEST_1" | translate}}</h2>
+							<h3>{{"TEST_1_TITLE" | translate}}</h3>
+							<div translate="TEST_1_TEXT"></div>
 			  		</div>
 			  		<div class="col-sm-3">
-				      	<h2 class="center">Test 2</h2>
+							<h2 class="center">{{"TEST_2" | translate}}</h2>
 				    
-						<h3>1.a Make a table with desktop computers.</h3>
-				      	<p>
-							Make a table of desktop computers with the information attached to the Json with path "/resources/data/data.json".
-							The table will be inserted in a new tab that you will have to create in the side menu with the correct configuration and using the ui-router library for navigation.
-					  	</p>
-					  	<h3>1.b Make a carousel with laptop computers.</h3>
-				      	<p>
-							Make a carousel of laptop computers with the information attached to the Json with path "/resources/data/data.json".
-							The carousel will be inserted in the same tab of the table.
-					  	</p>
+							<h3>{{"TEST_2A_TITLE" | translate}}</h3>
+							<div translate="TEST_2A_TEXT"></div>
+							<h3>{{"TEST_2B_TITLE" | translate}}</h3>
+							<div translate="TEST_2B_TEXT"></div>
 			  		</div>
 			  		<div class="col-sm-3">
-				      	<h2 class="center">Test 3</h2>
-				      	<h3>Make a data summary panel</h3>
-				      	<p>
-							In this section we propose the realization of a summary panel with the information provided within the data json.
-							It can be the typical panel of general information that a user of administrator type would see as a summary,
-						</p>
-						<p>					
-							For this section we do not put any kind of precondition, we let you choose both the design and the functionality of this screen, as long as it is consistent with the rest of the application.
-						</p>
-						<p>
-							In this section we propose the realization of a summary panel with the information provided within the data json.
-						</p>
-						<p>
-							The summary panel will be inserted in a new tab that you will have to create in the side menu with the correct configuration and using the ui-router library for navigation.
-						</p>
-				  	</div>
+							<h2 class="center">{{"TEST_3" | translate}}</h2>
+							<h3>{{"TEST_3_TITLE" | translate}}</h3>
+							<div translate="TEST_3_TEXT"></div>
+						</div>
 				  	<div class="col-sm-3">
-				      	<h2 class="center">Test 4</h2>
-				      	<h3>1.a Make multilanguage the application</h3>
-				      	<p>					
-							In this section we need you to implement multilanguage in the application, minimum one language more than English.
-						</p>
-						<p>												
-							The selected language will be saved in a browser cookie and should be consulted at the start of the application.
-						</p>
-						<p>
-							For this section we recommend the use of the angular-translate library.
-						</p>
-						<h3>1.b You musn´t use hardcode and literals in the controllers and html</h3>
-				      	<p>	
-							Implements a constant file that contains all the literals of all controllers and html and another for each language used in the previous section.
-						</p>
+				      	<h2 class="center">{{"TEST_4" | translate}}</h2>
+								<h3>{{"TEST_4A_TITLE" | translate}}</h3>
+								<div translate="TEST_4A_TEXT"></div>
+								<h3>{{"TEST_4B_TITLE" | translate}}</h3>
+				      	<div translate="TEST_4B_TEXT"></div>
 				  	</div>
 			    </div>
 
 			    <!-- Aditional Info -->
 			    <div id="aditionalInfo" class="tab-pane fade col-sm-12">
 			    	<div class="col-sm-6 col-sm-offset-3">
-	    		      	<h2 class="center">Aditional Information</h2>
-			      		<p>
-							In this section we will expose you the things that we will value about the test you are going to do:
-						</p>	
-						<ul>
-							<li>Clean Code.</li>
-							<li>Code optimization.</li>
-							<li>Code Coments.</li>
-							<li>Originality of the developed solutions.</li>
-							<li>The correct layout of the application.</li>
-							<li>The correct use of the classes and styles.</li>
-							<li>The time taken to perform the test.</li>
-							<li>Any improvement that the evaluated one wants to insert in the application explaining the reasons for which the implement.</li>
-						</ul>
-						<p>
-							In case of implementing an external library, other than those that we put at your disposal, you must attach an explanatory document with the functionality of that library and the way of use within the explanation.
-						</p>
+								<h2 class="center">{{"ADDITIONAL_INFO_TITLE" | translate}}</h2>
+			      		<div translate="ADDITIONAL_INFO_TEXT"></div>
 			    	</div>
 			    </div>
 		  	</div>

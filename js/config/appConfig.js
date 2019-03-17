@@ -14,6 +14,25 @@ app.config(function () {
 
 });
 
+/**
+ * @autor Sergio Cernuda
+ * @mail sergio.cernuda@ricoh.es
+ * @date 11/12/2018
+ * @description Translate provider config.
+ */
+app.config(['$translateProvider', function ($translateProvider) {
+    let lang = 'en';
+    if (localStorage.getItem('lang')) {
+        lang = localStorage.getItem('lang');
+    }
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'resources/i18n/locale-',
+        suffix: '.json'
+    })
+    .preferredLanguage(lang)
+    .useSanitizeValueStrategy('sceParameters');
+}]);
+
 
 /**
  * @autor Sergio Cernuda

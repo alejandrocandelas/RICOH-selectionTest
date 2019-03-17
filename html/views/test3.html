@@ -2,7 +2,7 @@
     ng-controller="test1Controller">
     <div class="containerTest">
         <!-- TEST 2.B -->
-        <h4 class="contentMainTittle center">Test 3 - Make a summary panel.</h4>
+        <h4 class="contentMainTittle center">{{"SOLUTION_3_TITLE" | translate}}</h4>
 
         <div class="row">
 
@@ -10,7 +10,7 @@
 
                 <div class="left-panel">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" aria-describedby="search" ng-model="search" ng-change="doSearch(search)">
+                        <input type="text" class="form-control" placeholder="{{'SEARCH' | translate}}" aria-describedby="search" ng-model="search" ng-change="doSearch(search)">
                         <span class="input-group-addon" id="search"><i class="fas fa-search"></i></span>
                     </div>
                 </div>

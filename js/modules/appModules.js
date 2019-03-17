@@ -10,6 +10,7 @@
  * @description Loading of the modules used in the application.
  */
 var app = angular.module('test_senior_angularjs', [
-    'ui.router'
+    'ui.router',
+    'pascalprecht.translate'
 ]);
 

@@ -15,34 +15,34 @@
 
 		<!-- Menu when isn´t collapse literal text-->
 		<ul class="menuOpenUl" ng-if="openedMenu() =='open'">
-		  <li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''">Welcome</li>
-		  <li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''">Test/Info</li>
-		  <li ng-click="go('test1')" ng-class="statename == 'test1' ? 'active' : ''">Test 1 - Make a Form</li>
-		  <li ng-click="go('test2')" ng-class="statename == 'test2' ? 'active' : ''">Test 2</li>
-		  <li ng-click="go('test3')" ng-class="statename == 'test3' ? 'active' : ''">Test 3</li>
+		  <li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''">{{"WELCOME" | translate}}</li>
+		  <li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''">{{"TEST/INFO" | translate}}</li>
+		  <li ng-click="go('test1')" ng-class="statename == 'test1' ? 'active' : ''">{{"TEST1_TITLE" | translate}}</li>
+		  <li ng-click="go('test2')" ng-class="statename == 'test2' ? 'active' : ''">{{"TEST_2" | translate}}</li>
+		  <li ng-click="go('test3')" ng-class="statename == 'test3' ? 'active' : ''">{{"TEST_3" | translate}}</li>
 		</ul>
 
 		<!-- Menu when is collapse icons-->
 		<ul class="menuCloseUl" ng-if="openedMenu() =='close'">
-			<li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Welcome">
+			<li ng-click="go('home')" ng-class="statename == 'home' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="{{'WELCOME' | translate}}">
 				<i class="fas fa-home"></i>
 			</li>
-			<li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Your Test info">
+			<li ng-click="go('test')" ng-class="statename == 'test' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="{{'YOUR_TEST_INFO' | translate}}">
 				<i class="fas fa-trophy"></i>
 			</li>
-			<li ng-click="go('test1')" ng-class="statename == 'test1' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Test 1 - Make a Form">
+			<li ng-click="go('test1')" ng-class="statename == 'test1' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="{{'TEST1_TITLE' | translate}}">
 				<span class="fa-stack">
 					<i class="far fa-circle fa-stack-2x"></i>
 					<i class="fa-stack-lg">1</i>
 				</span>
 			</li>
-			<li ng-click="go('test2')" ng-class="statename == 'test2' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Test 2">
+			<li ng-click="go('test2')" ng-class="statename == 'test2' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="{{'TEST_2' | translate}}">
 				<span class="fa-stack">
 					<i class="far fa-circle fa-stack-2x"></i>
 					<i class="fa-stack-lg">2</i>
 				</span>
 			</li>
-			<li ng-click="go('test3')" ng-class="statename == 'test3' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="Test 3">
+			<li ng-click="go('test3')" ng-class="statename == 'test3' ? 'active' : ''" data-toggle="tooltip" data-placement="right" title="{{'TEST_3' | translate}}">
 				<span class="fa-stack">
 					<i class="far fa-circle fa-stack-2x"></i>
 					<i class="fa-stack-lg">3</i>

@@ -28,12 +28,12 @@ app.controller('test3Controller', ['$rootScope', '$scope',
                 search = search.toLowerCase();
                 $scope.computers = $rootScope.computers.filter(function (item) {
                     return item.brand.toLowerCase().includes(search) ||
-                    item.model.toLowerCase().includes(search) ||
-                    item.cpu.toLowerCase().includes(search) ||
-                    item.type.toLowerCase().includes(search) ||
-                    item.shape.toLowerCase().includes(search) ||
-                    item.ram.includes(search) ||
-                    item.price.includes(search)
+                            item.model.toLowerCase().includes(search) ||
+                            item.cpu.toLowerCase().includes(search) ||
+                            item.type.toLowerCase().includes(search) ||
+                            item.shape.toLowerCase().includes(search) ||
+                            item.ram.includes(search) ||
+                            item.price.includes(search)
                 });
 
             }

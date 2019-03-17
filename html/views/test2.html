@@ -2,20 +2,20 @@
 	ng-controller="test1Controller">
 	<div class="containerTest center">
 		<!-- TEST 2.B -->
-		<h4 class="contentMainTittle">Test 2.a - Make a table with desktop computers.</h4>
+		<h4 class="contentMainTittle">{{"SOLUTION_2A_TITLE" | translate}}</h4>
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 table-scroll">
 				<table class="test2-table">
 					<thead>
 						<tr>
-							<th>Brand</th>
-							<th>Model</th>
-							<th>CPU</th>
-							<th>RAM</th>
-							<th>Type</th>
-							<th>Shape</th>
-							<th>Price</th>
-							<th>Image</th>
+							<th>{{"BRAND" | translate}}</th>
+							<th>{{'MODEL' | translate}}</th>
+							<th>{{'CPU' | translate}}</th>
+							<th>{{'RAM' | translate}}</th>
+							<th>{{'TYPE' | translate}}</th>
+							<th>{{'SHAPE' | translate}}</th>
+							<th>{{'PRICE' | translate}}</th>
+							<th>{{'IMAGE' | translate}}</th>
 						</tr>
 					</thead>
 
@@ -44,9 +44,9 @@
 
 				<nav aria-label="Page navigation" class="page-navigation">
 
-					<span>Showing from {{dtConfig.first + 1}} to
+					<span>{{'SOWING_FROM' | translate}} {{dtConfig.first + 1}} {{'TO' | translate}}
 						{{dtConfig.first + dtConfig.rowsPerPage > desktopComputers.length ? desktopComputers.length : dtConfig.first + dtConfig.rowsPerPage}}
-						of {{desktopComputers.length}}</span>
+						{{'OF' | translate}} {{desktopComputers.length}}</span>
 
 					<div class="pagination-block">
 
@@ -67,8 +67,8 @@
 						</ul>
 
 						<div class="row pagination-select">
-							<label class="col-sm-6">Rows to show</label>
-							<div class="col-sm-6">
+							<label class="col-sm-7">{{'ROWS_TO_SHOW' | translate}}</label>
+							<div class="col-sm-5">
 								<select class="form-control" ng-model="dtConfig.rowsPerPage"
 									ng-options="option for option in dtConfig.rowsPerPageOptions" ng-change="goPage(1)">
 								</select>
@@ -86,7 +86,7 @@
 	<div class="containerTest">
 
 		<!-- TEST 2.B -->
-		<h4 class="contentMainTittle center">Test 2.b - Make a carousel with laptop computers.</h4>
+		<h4 class="contentMainTittle center">{{"SOLUTION_2A_TITLE" | translate}}</h4>
 		<div class="row" ng-if="laptopComputers">
 			<div class="col-md-6 col-md-offset-3">
 
@@ -99,7 +99,7 @@
 						<div class="text">
 							<div>
 								<div class="model">{{item.brand}} {{item.model}}</div>
-								<div>{{item.cpu}} processor</div>
+								<div>{{item.cpu}}</div>
 								<div>{{item.ram}}GB RAM</div>
 								<div>{{item.type}}</div>
 							</div>

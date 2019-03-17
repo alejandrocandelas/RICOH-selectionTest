@@ -3,13 +3,10 @@
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
+	padding-bottom: 5rem;
 }
 
 /* TEST 2.A */
-
-.contentContainer {
-	margin-bottom: 5rem;
-}
 
 .test2-table {
 	width: 100%;

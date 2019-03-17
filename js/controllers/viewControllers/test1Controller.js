@@ -9,8 +9,8 @@
  * @date 14/03/2019
  * @description Test view controller.
  */
-app.controller('test1Controller', ['$rootScope', '$scope',
-	function ($rootScope, $scope) {
+app.controller('test1Controller', ['$rootScope', '$scope', '$translate',
+	function ($rootScope, $scope, $translate) {
 		$scope.submitted = false;
 		$scope.image = "";
 
@@ -27,7 +27,7 @@ app.controller('test1Controller', ['$rootScope', '$scope',
 				computer.urlImagePath = 'resources/images/jsonPcImages/' + computer.shape + '/' + computer.brand;
 				$rootScope.computers.push(computer);
 			} else {
-				alert('Required fields must be filled in.');
+				alert($translate.instant('FORM_ERRORS'));
 			}
 		};
 	}

@@ -4,16 +4,29 @@
 <div id="headerContainer" class="headerContainer noCollapse">
 	<span class="collapsibleMenuIconBurger" ng-if="!isMenuOpen" ng-click="menuVisibility(true)">&#9776;</span>
 	<span class="collapsibleMenuIconCross" ng-if="isMenuOpen" ng-click="menuVisibility(false)">&times;</span>
+
 	<span class="contactWithEvaluator">
-		<button type="button" class="btn btn-primary" ng-click="hideShowContactEvaluatorInfo('show')">Contact with evaluator</button>
+		<button type="button" class="btn btn-primary" ng-click="hideShowContactEvaluatorInfo('show')">{{"CONTACT_WITH_EVALUATOR" | translate}}</button>
 	</span>
-</div>	
+
+	<!-- Language menu -->
+	<div class="dropdown language">
+		<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			{{'LANGUAGE' | translate}}
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a class="pointer" ng-click="setLang('en')">{{'ENGLISH' | translate}}</a></li>
+			<li><a class="pointer" ng-click="setLang('es')">{{'SPANISH' | translate}}</a></li>
+		</ul>
+	</div>
+</div>
 
 <!-- Contact with your evaluator div and content -->
 <div id="evaluatorInfo" class="cover contactEvaluator hide fadeIn" ng-if="true">
 	<span class="hideContactEvaluatorCross" ng-click="hideShowContactEvaluatorInfo('hide')">×</span>
-	<p class="pContactEvaluator">		
-		If you have any doubts about the procedure of the technical test you can contact your evaluator through the email that we enclose here:
+	<p class="pContactEvaluator">
+		{{"CONTACT_INFO" | translate}}
 	</p>	
 	<div class="imgFotoPosition"><img class="imageEvaluator" src="resources/images/fotoSergio.PNG" alt="Evaluator photo"></div>
 	<div class="evaluatorMail">sergio.cernuda@ricoh.es</div>

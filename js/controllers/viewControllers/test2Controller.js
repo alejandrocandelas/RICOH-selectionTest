@@ -72,7 +72,6 @@ app.controller('test2Controller', ['$rootScope', '$scope',
 			let i;
 			let slides = document.getElementsByClassName("mySlides");
 			let dots = document.getElementsByClassName("dot");
-			console.log(slides, dots);
 			if (n > slides.length) { $scope.slideIndex = 1 }
 			if (n < 1) { $scope.slideIndex = slides.length }
 			for (i = 0; i < slides.length; i++) {
@@ -97,7 +96,6 @@ app.controller('test2Controller', ['$rootScope', '$scope',
 
 		// Next/previous controls
 		$scope.plusSlides = function (n) {
-			console.log(n);
 			$scope.showSlides($scope.slideIndex += n);
 		}
 

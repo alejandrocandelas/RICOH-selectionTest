@@ -4,99 +4,96 @@
 	ng-controller="test1Controller">
 	<div class="containerTest center">
 
-		<h4 class="contentMainTittle">Test 1 - Make a Form</h4>
+		<h4 class="contentMainTittle">{{'TEST1_TITLE' | translate}}</h4>
 
-		<p class="center">In this form, you can add new computers. <i>Fields <strong class="text-danger">*</strong> are
-				required.</i></p>
+		<p class="center" translate="SOLUTION_1_TEXT"></p>
 
 		<form novalidate class="col-md-10 col-md-offset-1" name="computerForm">
 			<div class="row">
 				<div class="form-group">
-					<label class="col-sm-2" for="brand">Brand<strong class="text-danger">*</strong></label>
+					<label class="col-sm-2" for="brand">{{"BRAND" | translate}}<strong class="text-danger">*</strong></label>
 					<div class="col-sm-4">
 						<input name="brand" type="text" class="form-control" ng-model="computer.brand"
-							placeholder="Brand" id="brand" required>
+							placeholder="{{'BRAND' | translate}}" id="brand" required>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="model">Model</label>
+					<label class="col-sm-2" for="model">{{'MODEL' | translate}}</label>
 					<div class="col-sm-4">
 						<input name="model" type="text" class="form-control" ng-model="computer.model"
-							placeholder="Model" id="model">
+							placeholder="{{'MODEL' | translate}}" id="model">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="price">Price</label>
+					<label class="col-sm-2" for="price">{{'PRICE' | translate}}</label>
 					<div class="col-sm-4">
 						<div class="input-group">
 							<input name="price" type="number" class="form-control" ng-model="computer.price"
-								placeholder="Price" aria-describedby="price-addon" id="price">
+								placeholder="{{'PRICE' | translate}}" aria-describedby="price-addon" id="price">
 							<span class="input-group-addon" id="price-addon">€</span>
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="cpu">CPU</label>
+					<label class="col-sm-2" for="cpu">{{'CPU' | translate}}</label>
 					<div class="col-sm-4">
-						<input name="cpu" type="text" class="form-control" ng-model="computer.cpu" placeholder="CPU"
+						<input name="cpu" type="text" class="form-control" ng-model="computer.cpu" placeholder="{{'CPU' | translate}}"
 							id="cpu">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="ram">RAM</label>
+					<label class="col-sm-2" for="ram">{{'RAM' | translate}}</label>
 					<div class="col-sm-4">
 						<div class="input-group">
 							<input name="ram" type="number" class="form-control" ng-model="computer.ram"
-								placeholder="RAM" aria-describedby="ram-addon" id="ram">
+								placeholder="{{'RAM' | translate}}" aria-describedby="ram-addon" id="ram">
 							<span class="input-group-addon" id="ram-addon">GB</span>
 						</div>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="type">Type</label>
+					<label class="col-sm-2" for="type">{{'TYPE' | translate}}</label>
 					<div class="col-sm-4">
 						<select name="type" class="form-control" id="type" ng-model="computer.type">
-							<option value="multimedia">Multimedia</option>
-							<option value="gaming">Gaming</option>
-							<option value="workstation">Workstation</option>
-							<option value="all in one">All in one</option>
+							<option value="multimedia">{{'MULTIMEDIA' | translate}}</option>
+							<option value="gaming">{{'GAMING' | translate}}</option>
+							<option value="workstation">{{'WORKSTATION' | translate}}</option>
+							<option value="all in one">{{'ALL_IN_ONE' | translate}}</option>
 						</select>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="shape">Shape<strong class="text-danger">*</strong></label>
+					<label class="col-sm-2" for="shape">{{'SHAPE' | translate}}<strong class="text-danger">*</strong></label>
 					<div class="col-sm-4">
 						<select name="shape" class="form-control" id="shape" ng-model="computer.shape" required>
-							<option value="desktob">Desktob</option>
-							<option value="laptop">Laptop</option>
+							<option value="desktob">{{'DESKTOP' | translate}}</option>
+							<option value="laptop">{{'LAPTOP' | translate}}</option>
 						</select>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2" for="urlImagePath">Image path</label>
+					<label class="col-sm-2" for="urlImagePath">{{'IMAGE' | translate}}</label>
 					<div class="col-sm-4">
-						<!-- <input name="urlImagePath" type="text" class="form-control" ng-model="computer.urlImagePath"
-								placeholder="Image path" id="urlImagePath"> -->
 						<input type="file" name="urlImagePath" class="form-control" fileread="$scope.image"
 							id="urlImagePath">
 					</div>
 				</div>
 
 				<div class="col-sm-12 center">
-					<button class="btn btn-primary" type="submit" ng-click="update(computer)">Save</button>
+					<button class="btn btn-primary" type="submit" ng-click="update(computer)">{{'SAVE' | translate}}</button>
 				</div>
 			</div>
 		</form>
 
 		<div ng-if="submitted == true" class="col-sm-10 col-md-offset-1 text-left">
-			<p>New computer:</p>
+			<p>{{"NEW_COMPUTER" | translate}}:</p>
 			<ul>
 				<li>Brand: {{computer.brand}}</li>
 				<li>Model: {{computer.model}}</li>
