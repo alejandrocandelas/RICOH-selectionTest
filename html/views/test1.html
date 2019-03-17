@@ -92,18 +92,23 @@
 			</div>
 		</form>
 
-		<div ng-if="submitted == true" class="col-sm-10 col-md-offset-1 text-left">
-			<p>{{"NEW_COMPUTER" | translate}}:</p>
-			<ul>
-				<li>Brand: {{computer.brand}}</li>
-				<li>Model: {{computer.model}}</li>
-				<li>Price: {{computer.price}}</li>
-				<li>Cpu: {{computer.cpu}}</li>
-				<li>Ram: {{computer.ram}}</li>
-				<li>Type: {{computer.type}}</li>
-				<li>Shape: {{computer.shape}}</li>
-				<li>Image: {{computer.urlImagePath}}</li>
-			</ul>
+		<div ng-if="submitted == true" class="col-sm-8 col-md-offset-2 text-left object-container">
+			<div class="col-md-8">
+				<p>{{"NEW_COMPUTER" | translate}}:</p>
+				<ul>
+					<li>Brand: {{computer.brand}}</li>
+					<li>Model: {{computer.model}}</li>
+					<li>Price: {{computer.price}}</li>
+					<li>Cpu: {{computer.cpu}}</li>
+					<li>Ram: {{computer.ram}}</li>
+					<li>Type: {{computer.type}}</li>
+					<li>Shape: {{computer.shape}}</li>
+					<li>Image: {{computer.urlImagePath}}</li>
+				</ul>
+			</div>
+			<div class="image-container col-md-4" ng-if="computer.urlImagePath">
+				<img src="{{image}}" alt="{{computer.model}}">
+			</div>
 		</div>
 
 	</div>

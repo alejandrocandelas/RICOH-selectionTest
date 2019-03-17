@@ -26,3 +26,11 @@ label {
 button[type="submit"] {
     margin-bottom: 60px;
 }
+
+.object-container {
+    display: flex;
+}
+
+.object-container .image-container img {
+    height: 200px;
+}
